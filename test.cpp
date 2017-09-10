@@ -28,7 +28,7 @@ char *getline(){
 
 int ** transpose(const int * const * m, unsigned rows, unsigned cols)
 {
-    
+    int a = 0;
 }
 
 int main() {
