@@ -1,4 +1,4 @@
-//Указатели в языке С++
+//Указатели и ссылки в языке С++
 //https://stepik.org/lesson/539/step/1
 
 #include <iostream>
@@ -34,7 +34,10 @@ int stepik(){
 	cout << array_pointer_end - array_pointer_start << endl; //9 
 	cout << array_pointer_start[1] << endl;                  //42
 
-
+	//Ссылки
+	int my_int = 42;
+	int & my_ref = my_int;
+	cout << "my_ref: " << my_ref << endl;
 	return 0;
 }
 
@@ -53,6 +56,12 @@ void swap(int * a, int * b){         //функция swap, использующ
 	*a = *b;
 	*b = temp;
 } 
+
+void swap_ref(int & a, int & b){	//функция swap, использующая ссылки
+	int temp = a;
+	a = b;
+	b = temp;
+}
 
 int max_element(int * m, int size){  //передача массива в функцию
 	int max =  *m;
@@ -119,6 +128,8 @@ int main(){
 	int b = 2;
 	swap(&a, &b);
 	cout << "result of swapping: "<< a << " " << b << endl;         			 //2 1
+	swap_ref(a, b);
+	cout << "result of swap_ref: " << a << " " << b << endl;					 //1 2
 
 	int my_array[10] = {21, 42, 3, 4, 5, 6};
 	cout << "max element is " << max_element(my_array, 10) << endl;              //42  
